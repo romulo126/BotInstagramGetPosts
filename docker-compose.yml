@@ -1,0 +1,14 @@
+version: "3"
+services:
+  php_8_instagram:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_8_instagram
+    ports:
+      - "8000:80"
+    volumes:
+      - ./config/sites/:/etc/apache2/sites-available/
+      - ./config/sites-enabled:/etc/apache2/sites-enabled/
+    restart: always
+    
