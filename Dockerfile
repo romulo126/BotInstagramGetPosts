@@ -17,10 +17,14 @@ RUN echo $TZ > /etc/timezone
 RUN rm /etc/localtime
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
 RUN dpkg-reconfigure -f noninteractive tzdata
-USER www-data
+USER root
 
 WORKDIR /var/www/html
 COPY ./src/ /var/www/html/instagram
-RUN cd /var/www/html/instagram && composer install --no-dev && php artisan key:generate
-
 RUN chown -R www-data:www-data /var/www/html
+USER www-data
+RUN cd /var/www/html/instagram && \
+    mkdir vendor && \
+    composer install --no-dev && \
+    cp .env.example .env && \
+    php artisan key:generate
