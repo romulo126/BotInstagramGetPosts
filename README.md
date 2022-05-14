@@ -1,5 +1,8 @@
 
 PT-BR(https://github.com/romulo126/BotInstagramGetPosts/blob/master/README.md)
+
+Composer (https://github.com/romulo126/BotInstagramGetPostsComposer)
+
 ## Description
 - api in laravel to get images, videos, likes and descriptions of Instagram user POST
 
