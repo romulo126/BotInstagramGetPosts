@@ -1,10 +1,10 @@
 version: "3"
 services:
-  php_8_instagram:
+  php_8_instagramservice:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: php_8_instagram
+    container_name: php_8_instagramservice
     ports:
       - "8000:80"
     volumes:
