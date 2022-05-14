@@ -19,7 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/ts',function (){echo 'oi';});
+Route::get('/checkpoint',function (){
+    return response()->json(['success'=>true,'data'=>'checkpoint'],200);
+});
 
 Route::prefix('/insta')->controller(instaPageController::class)->group(function () {
     Route::post('/all', 'all');
