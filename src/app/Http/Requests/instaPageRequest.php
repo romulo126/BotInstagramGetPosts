@@ -26,7 +26,6 @@ class instaPageRequest extends FormRequest
     {
         return [
             'url'=>['required','url', new instaPageRule],
-            'sessionid'=>['required','string'],
         ];
     }
 }
